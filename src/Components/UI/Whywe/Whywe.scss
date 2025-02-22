@@ -1,0 +1,38 @@
+.whywe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  background-color: rgb(24 21 36);
+  color: #fff;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__titlegreen {
+    color: limegreen;
+  }
+  &__titles {
+    font-size: 20px;
+  }
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  &__card {
+    width: 32%;
+    padding: 20px;
+    background-color: rgba(55, 52, 71, 0.25);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    img {
+      width: 60px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(24 21 36);
+  height: 100px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__hr {
+    height: 50px;
+    color: #7d7d7d;
+  }
+  &__title {
+    width: 115px;
+    font-weight: 300;
+    color: #fff;
+  }
+  &__menu {
+    display: flex;
+    gap: 50px;
+  }
+  &__link {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  &__langcourses {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__langlink {
+    color: #ffffff56;
+    font-weight: 300;
+    &.active {
+      color: #fff;
+    }
+  }
+  &__lang {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__courses {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: limegreen;
+    color: #fff;
+    padding: 12px 10px;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
