@@ -1,29 +1,30 @@
 import React from "react";
 import "./Help.scss";
 import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { getText } from "../../../i18n";
 import flag from "../../../assets/flag.png";
 import help from "../../../assets/help.png";
 
 const Help = () => {
+  const { lang } = useParams();
+
   return (
     <div className="help" id="help">
       <div className="help__wrapper">
         <div className="help__left">
           <div className="help__titles">
-            <h1 className="help__title">Biz sizning </h1>
+            <h1 className="help__title">{getText(lang, "help_title")}</h1>
             <h1 className="help__titlegreen">
-              qiziqishlaringiz va maqsadlaringiz asosida siz uchun mukammal
-              kursni tanlaymiz!
+              {getText(lang, "help_titlegreen")}
             </h1>
           </div>
-          <p className="help__text">
-            Biz sizga to'g'ri kursni tanlashda yordam beramiz!
-          </p>
-          <h3 className="help__text">Sizning kontaktingiz:</h3>
+          <p className="help__text">{getText(lang, "help_desc")}</p>
+          <h3 className="help__text">{getText(lang, "help_contact")}</h3>
           <form className="contact__form">
             <input
               type="text"
-              placeholder="Ismingiz..."
+              placeholder={getText(lang, "help_name_placeholder")}
               className="contact__input"
             />
             <div
@@ -34,7 +35,7 @@ const Help = () => {
               <span style={{ marginLeft: "5px" }}>+998</span>
               <input
                 type="number"
-                placeholder="Telefon raqamingiz"
+                placeholder={getText(lang, "help_phone_placeholder")}
                 maxLength={9}
                 className="contact__inp"
                 style={{ marginLeft: "5px" }}
@@ -42,13 +43,12 @@ const Help = () => {
             </div>
             <div className="contact__bottom">
               <button type="submit" className="contact__btn">
-                Murojaat yuborish
+                {getText(lang, "help_submit")}
               </button>
               <p>
-                Ro'yxatdan o'tish orqali siz o'qiganingizni va rozi
-                ekanligingizni tasdiqlaysiz{" "}
+                {getText(lang, "help_terms")}{" "}
                 <NavLink style={{ color: "rgb(114, 153, 237)" }}>
-                  Maxfiylik Siyosati
+                  {getText(lang, "help_privacy_policy")}
                 </NavLink>
                 .
               </p>

@@ -1,39 +1,37 @@
-import React, { memo, useMemo } from "react";
+import React, { memo } from "react";
 import "./Intro.scss";
 import { NavLink } from "react-router-dom";
+import { getText } from "../../../i18n";
+import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Intro = () => {
-  const settings = useMemo(
-    () => ({
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      swipeToSlide: true,
-    }),
-    []
-  );
+  const { lang } = useParams(); // URL'dan tilni olish
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+  };
 
   return (
     <div className="intro">
       <div className="intro__wrapper">
         <div className="intro__desc">
           <div className="intro__titles">
-            <h1 className="intro__title">IT MINDED{">"}MAKE PEOPLE </h1>
-            <h1 className="intro__titlegreen">IT MINDED</h1>
+            <h1 className="intro__title">{getText(lang, "intro_title")}</h1>
+            <h1 className="intro__titlegreen">
+              {getText(lang, "intro_titlegreen")}
+            </h1>
           </div>
-          <p className="intro__text">
-            Biz global muammolarga ochiq bo`lgan IT-mutaxassislar avlodini
-            tayyorlamoqdamiz, bilim, ko`nikma va amaliy tajriba orqali jamiyat
-            hayot sifatini yaxshilashga qaratilgan innovatsion yechimlarni
-            yaratmoqdamiz.
-          </p>
+          <p className="intro__text">{getText(lang, "intro_text")}</p>
           <NavLink className="intro__btn">
-            Murojaat yuboring{" "}
+            {getText(lang, "intro_btn")}{" "}
             <svg
               width="18"
               height="18"
@@ -46,18 +44,25 @@ const Intro = () => {
             </svg>
           </NavLink>
         </div>
+
         <Slider className="intro__right" {...settings}>
           <NavLink draggable="false" className="intro__card intro__card1">
-            <h1>Front-end dasturlash</h1>
-            <p className="intro__date">5 oy</p>
+            <h1>{getText(lang, "intro_course1")}</h1>
+            <p className="intro__date">
+              {getText(lang, "intro_course1_duration")}
+            </p>
           </NavLink>
           <NavLink draggable="false" className="intro__card intro__card2">
-            <h1>Kiberxavfsizlikka kirish</h1>
-            <p className="intro__date">2 oy</p>
+            <h1>{getText(lang, "intro_course2")}</h1>
+            <p className="intro__date">
+              {getText(lang, "intro_course2_duration")}
+            </p>
           </NavLink>
           <NavLink draggable="false" className="intro__card intro__card3">
-            <h1>Motion dizayn</h1>
-            <p className="intro__date">5 oy</p>
+            <h1>{getText(lang, "intro_course3")}</h1>
+            <p className="intro__date">
+              {getText(lang, "intro_course3_duration")}
+            </p>
           </NavLink>
         </Slider>
       </div>
@@ -65,4 +70,4 @@ const Intro = () => {
   );
 };
 
-export default memo(Intro);
+export default Intro;

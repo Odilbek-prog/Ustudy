@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Loader from "./Components/UI/loader/Loader";
 import "./App.scss";
+import Courses from "./Pages/Courses";
 
 // Lazy Loading
 const Home = lazy(() => import("./Pages/Home"));
@@ -32,14 +33,17 @@ const App = () => {
   }, [currentLang, savedLang, navigate, location.pathname]);
 
   return (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/:lang" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="*" element={<Home />} />
-        </Route>
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path="/:lang" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/:lang/course1" element={<Courses />} />
+        <Route path="/:lang/course2" element={<Courses />} />
+        <Route path="/:lang/course3" element={<Courses />} />
+        <Route path="/:lang/course4" element={<Courses />} />
+        <Route path="/:lang/course5" element={<Courses />} />
+        <Route path="*" element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
 

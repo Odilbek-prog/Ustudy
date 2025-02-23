@@ -12,7 +12,11 @@ const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [show, setShow] = useState(false);
+  const handleShow = () => {
+    setShow(!show);
+  };
+  // menu dropdown
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -113,11 +117,60 @@ const Navbar = () => {
                 </button>
               </li>
             </ul>
-            <button className="navbar__courses">
+            <button className="navbar__courses" onClick={handleShow}>
               <img src={menu} loading="lazy" alt="" className="navbar__icon" />
               {getText(lang, "allcourse")}
               <img src={arrow} loading="lazy" alt="" className="navbar__icon" />
             </button>
+            {show ? (
+              <ul className="navbar__dropdown">
+                <li className="navbar__dropdownlist">
+                  <NavLink
+                    className="navbar__dropdownlink"
+                    to={`/${lang}/course1`}
+                    onClick={handleShow}
+                  >
+                    {getText(lang, "course1.name")}
+                  </NavLink>
+                </li>
+                <li className="navbar__dropdownlist">
+                  <NavLink
+                    className="navbar__dropdownlink"
+                    to={`/${lang}/course2`}
+                    onClick={handleShow}
+                  >
+                    {getText(lang, "course2.name")}
+                  </NavLink>
+                </li>
+                <li className="navbar__dropdownlist">
+                  <NavLink
+                    className="navbar__dropdownlink"
+                    to={`/${lang}/course3`}
+                    onClick={handleShow}
+                  >
+                    {getText(lang, "course3.name")}
+                  </NavLink>
+                </li>
+                <li className="navbar__dropdownlist">
+                  <NavLink
+                    className="navbar__dropdownlink"
+                    to={`/${lang}/course4`}
+                    onClick={handleShow}
+                  >
+                    {getText(lang, "course4.name")}
+                  </NavLink>
+                </li>
+                <li className="navbar__dropdownlist">
+                  <NavLink
+                    className="navbar__dropdownlink"
+                    to={`/${lang}/course5`}
+                    onClick={handleShow}
+                  >
+                    {getText(lang, "course5.name")}
+                  </NavLink>
+                </li>
+              </ul>
+            ) : null}
           </div>
         </div>
       </div>
