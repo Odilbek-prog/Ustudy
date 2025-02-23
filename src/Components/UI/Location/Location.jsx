@@ -4,7 +4,7 @@ import "./Location.scss";
 
 const Location = () => {
   return (
-    <div className="location">
+    <div className="location" id="address">
       <div className="location__wrapper">
         <h1 className="location__title">Bizning manzilimiz:</h1>
         <div className="location__bottom">
