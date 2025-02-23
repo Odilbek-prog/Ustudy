@@ -9,8 +9,11 @@ import {
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Layout from "./Components/Layout";
+import CookieModal from "./Components/UI/cookie/CookieModal";
 
 const App = () => {
+  // Cookie state
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -38,6 +41,7 @@ const App = () => {
 const AppWrapper = () => (
   <Router>
     <App />
+    <CookieModal />
   </Router>
 );
 
