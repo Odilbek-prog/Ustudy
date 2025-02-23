@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useParams, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import menu from "../../assets/menu-list.png";
@@ -9,6 +9,18 @@ import "./Navbar.scss";
 const Navbar = () => {
   const { lang } = useParams();
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (location.hash) {
@@ -20,7 +32,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${isScrolled ? "navbar--fixed" : ""}`}>
       <div className="navbar__wrapper">
         <NavLink className={"navbar__logo"} to={`/${lang}`}>
           <img src={logo} loading="lazy" alt="" className="navbar__img" />
