@@ -8,9 +8,12 @@ import {
 } from "react-router-dom";
 import Home from "./Pages/Home";
 import Layout from "./Components/Layout";
+import CookieModal from "./Components/UI/cookie/CookieModal";
 import "./App.scss";
 
 const App = () => {
+  // Cookie state
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -37,6 +40,7 @@ const App = () => {
 const AppWrapper = () => (
   <Router>
     <App />
+    <CookieModal />
   </Router>
 );
 
