@@ -18,7 +18,7 @@ const Navbar = () => {
         </NavLink>
         <ul className="navbar__menu">
           <li className="navbar__list">
-            <NavLink className={"navbar__link"} to={`/${lang}`}>
+            <NavLink className={"navbar__link"} to={`/${lang}#course`}>
               {getText(lang, "course")}
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="navbar__list">
-            <NavLink className={"navbar__link"} to={`/${lang}#contact`}>
+            <NavLink className={"navbar__link"} to={`/${lang}#location`}>
               {getText(lang, "contact")}
             </NavLink>
           </li>

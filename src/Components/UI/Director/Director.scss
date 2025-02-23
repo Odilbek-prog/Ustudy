@@ -1,0 +1,51 @@
+.director {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url(../../../assets/directorbg.png);
+  height: 580px;
+  color: #fff;
+  padding-top: 50px;
+  border-top-right-radius: 60px;
+  border-top-left-radius: 60px;
+
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 65%;
+    font-size: 20px;
+  }
+  &__img {
+    width: 250px;
+  }
+  &__profile {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    align-items: center;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__card {
+    padding: 20px;
+    background-color: #ffffff21;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+}
