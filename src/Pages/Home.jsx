@@ -9,6 +9,10 @@ import Team from "../Components/UI/Team/Team";
 import Director from "../Components/UI/Director/Director";
 import Vacancies from "../Components/UI/Vacancies/Vacancies";
 import Help from "../Components/UI/Help/Help";
+import Value from "../Components/UI/Value/Value";
+import Work from "../Components/UI/Work/Work";
+import Faq from "../Components/UI/Faq/Faq";
+import Location from "../Components/UI/Location/Location";
 
 const Home = () => {
   const { lang } = useParams();
@@ -32,6 +36,10 @@ const Home = () => {
       <Director />
       <Vacancies />
       <Help />
+      <Value />
+      <Work />
+      <Faq />
+      <Location />
     </div>
   );
 };

@@ -51,7 +51,7 @@ const Navbar = () => {
           <NavLink className={"navbar__logo"} to={`/${lang}`}>
             <img src={logo} loading="lazy" alt="" className="navbar__img" />
             <hr className="navbar__hr" />
-            <h3 className="navbar__title">USTUDY BY TSOUS</h3>
+            <h3 className="navbar__title">USTUDY BY UZINFOCOM</h3>
           </NavLink>
           <ul className="navbar__menu">
             <li className="navbar__list">
@@ -65,7 +65,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="navbar__list">
-              <NavLink className={"navbar__link"} to={`/${lang}#contact`}>
+              <NavLink className={"navbar__link"} to={`/${lang}#address`}>
                 {getText(lang, "contact")}
               </NavLink>
             </li>

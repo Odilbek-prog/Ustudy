@@ -9,9 +9,13 @@
     width: 1300px;
     display: flex;
     justify-content: space-between;
+    padding: 25px;
+    background-color: rgba(4, 21, 47, 1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
   }
   &__left {
-    width: 610px;
+    width: 620px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -20,11 +24,13 @@
   &__titlegreen {
     display: inline;
     font-size: 40px;
+    line-height: 60px;
   }
   &__titlegreen {
     color: limegreen;
   }
   &__img {
-    width: 650px;
+    width: 600px;
+    height: 450px;
   }
 }
