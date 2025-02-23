@@ -10,6 +10,7 @@ import Home from "./Pages/Home";
 import Layout from "./Components/Layout";
 import CookieModal from "./Components/UI/cookie/CookieModal";
 import "./App.scss";
+import Courses from "./Pages/Courses";
 
 const App = () => {
   // Cookie state
@@ -31,6 +32,11 @@ const App = () => {
     <Routes>
       <Route path="/:lang" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="/:lang/course1" element={<Courses />} />
+        <Route path="/:lang/course2" element={<Courses />} />
+        <Route path="/:lang/course3" element={<Courses />} />
+        <Route path="/:lang/course4" element={<Courses />} />
+        <Route path="/:lang/course5" element={<Courses />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

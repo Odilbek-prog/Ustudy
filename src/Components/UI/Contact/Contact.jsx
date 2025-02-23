@@ -1,29 +1,33 @@
 import React from "react";
 import "./Contact.scss";
 import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { getText } from "../../../i18n";
 import flag from "../../../assets/flag.png";
 
 const Contact = () => {
+  const { lang } = useParams();
+
   return (
     <div className="contact">
       <div className="contact__wrapper">
         <div className="contact__desc">
           <div className="contact__titles">
-            <h1 className="contact__title">
-              Biz sizga tanlashda yordam beramiz
+            <h1 className="contact__title">{getText(lang, "helpChoose")}</h1>
+            <h1 className="contact__titlegreen">
+              {getText(lang, "relevantCourse")}
             </h1>
-            <h1 className="contact__titlegreen"> tegishli kurs!</h1>
           </div>
-          <p className="contact__text">
-            Biz sizga to'g'ri kursni tanlashda yordam beramiz!
-          </p>
+          <p className="contact__text">{getText(lang, "helpChooseDesc")}</p>
         </div>
         <div className="contact__right">
-          <h3 className="contact__righttitle">Sizning kontaktingiz:</h3>
+          <h3 className="contact__righttitle">
+            {getText(lang, "yourContact")}
+          </h3>
           <form className="contact__form">
             <input
               type="text"
-              placeholder="Ismingiz..."
+              placeholder={getText(lang, "yourName")}
               className="contact__input"
             />
             <div
@@ -34,7 +38,7 @@ const Contact = () => {
               <span style={{ marginLeft: "5px" }}>+998</span>
               <input
                 type="number"
-                placeholder="Telefon raqamingiz"
+                placeholder={getText(lang, "yourPhone")}
                 maxLength={9}
                 className="contact__inp"
                 style={{ marginLeft: "5px" }}
@@ -42,13 +46,12 @@ const Contact = () => {
             </div>
             <div className="contact__bottom">
               <button type="submit" className="contact__btn">
-                Murojaat yuborish
+                {getText(lang, "submitRequest")}
               </button>
               <p>
-                Ro'yxatdan o'tish orqali siz o'qiganingizni va rozi
-                ekanligingizni tasdiqlaysiz{" "}
+                {getText(lang, "privacyAgreement")}{" "}
                 <NavLink style={{ color: "rgb(114, 153, 237)" }}>
-                  Maxfiylik Siyosati
+                  {getText(lang, "privacyPolicy")}
                 </NavLink>
                 .
               </p>

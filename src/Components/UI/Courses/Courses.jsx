@@ -9,165 +9,110 @@ import course3 from "../../../assets/intro3.png";
 import course4 from "../../../assets/course4.jpeg";
 import course5 from "../../../assets/course5.jpeg";
 import date from "../../../assets/calendar.png";
-import { NavLink, useParams } from "react-router";
+import { NavLink, useParams } from "react-router-dom";
+import { getText } from "../../../i18n";
 
 const Courses = () => {
   const { lang } = useParams();
-  var settings = {
+
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2, slidesToScroll: 2 },
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+    ],
   };
+
+  const courses = [
+    {
+      id: 1,
+      image: course1,
+      duration: "5 oy",
+      title: getText(lang, "frontendTitle"),
+      description: getText(lang, "frontendDesc"),
+      price: "2 000 000 / oy",
+    },
+    {
+      id: 2,
+      image: course2,
+      duration: "2 oy",
+      title: getText(lang, "cyberTitle"),
+      description: getText(lang, "cyberDesc"),
+      price: "2 000 000 / oy",
+    },
+    {
+      id: 3,
+      image: course3,
+      duration: "5 oy",
+      title: getText(lang, "motionTitle"),
+      description: getText(lang, "motionDesc"),
+      price: "2 500 000 / oy",
+    },
+    {
+      id: 4,
+      image: course4,
+      duration: "4 oy",
+      title: getText(lang, "graphicTitle"),
+      description: getText(lang, "graphicDesc"),
+      price: "2 000 000 / oy",
+    },
+    {
+      id: 5,
+      image: course5,
+      duration: "6 oy",
+      title: getText(lang, "backendTitle"),
+      description: getText(lang, "backendDesc"),
+      price: "1 500 000 / oy",
+    },
+  ];
+
   return (
     <div className="courses" id="course">
       <div className="courses__wrapper">
-        <h1 className="courses__title">Bizning kurslarimiz</h1>
+        <h1 className="courses__title">{getText(lang, "ourCourses")}</h1>
         <Slider className="courses__cards" {...settings}>
-          <NavLink
-            draggable="false"
-            to={`/${lang}/courses/1`}
-            className="courses__card"
-          >
-            <div className="courses__top">
-              <img src={course1} loading="lazy" className="courses__img" />
-              <div className="courses__date">
-                <img src={date} alt="" className="courses__icon" />
-                <p> 5 oy</p>
+          {courses.map((course) => (
+            <NavLink
+              key={course.id}
+              draggable="false"
+              to={`/${lang}/courses/${course.id}`}
+              className="courses__card"
+            >
+              <div className="courses__top">
+                <img
+                  src={course.image}
+                  loading="lazy"
+                  className="courses__img"
+                  alt={course.title}
+                />
+                <div className="courses__date">
+                  <img src={date} alt="" className="courses__icon" />
+                  <p>{course.duration}</p>
+                </div>
               </div>
-            </div>
-            <div className="courses__desc">
-              <h2 className="courses__cardtitle">Front-end dasturlash</h2>
-              <p className="courses__text">
-                <b>Frontend dasturlash</b> - bu dinamik va interaktiv
-                veb-sahifalarni yaratishni o'zlashtirish uchun mo'ljallangan
-                intensiv va amaliyotga yo'naltirilgan kursdir. Kurs HTML va CSS
-                dan zamonaviy...
-              </p>
-            </div>
-            <div className="courses__bottom">
-              <p className="courses__price">2 000 000 / oy</p>
-              <div className="courses__link">
-                <p>Batafsil</p>
-                <span className="courses__arrow">→</span>
+              <div className="courses__desc">
+                <h2 className="courses__cardtitle">{course.title}</h2>
+                <p className="courses__text">{course.description}</p>
               </div>
-            </div>
-          </NavLink>
-          <NavLink
-            draggable="false"
-            to={`/${lang}/courses/2`}
-            className="courses__card"
-          >
-            <div className="courses__top">
-              <img src={course2} loading="lazy" className="courses__img" />
-              <div className="courses__date">
-                <img src={date} alt="" className="courses__icon" />
-                <p> 2 oy</p>
+              <div className="courses__bottom">
+                <p className="courses__price">{course.price}</p>
+                <div className="courses__link">
+                  <p>{getText(lang, "moreInfo")}</p>
+                  <span className="courses__arrow">→</span>
+                </div>
               </div>
-            </div>
-            <div className="courses__desc">
-              <h2 className="courses__cardtitle">Kiberxavfsizlikka kirish</h2>
-              <p className="courses__text">
-                <b>"Kiberxavfsizlikka kirish"</b> - bu chuqur kirish kursi va
-                kiberxavfsizlik bo'yicha asosiy bilimlarni, shu jumladan asosiy
-                tushunchalarni qamrab oladi kiberxavfsizlik, kriptografiya
-                asoslari, kirishni...
-              </p>
-            </div>
-            <div className="courses__bottom">
-              <p className="courses__price">2 000 000 / oy</p>
-              <div className="courses__link">
-                <p>Batafsil</p>
-                <span className="courses__arrow">→</span>
-              </div>
-            </div>
-          </NavLink>
-          <NavLink
-            draggable="false"
-            to={`/${lang}/courses/3`}
-            className="courses__card"
-          >
-            <div className="courses__top">
-              <img src={course3} loading="lazy" className="courses__img" />
-              <div className="courses__date">
-                <img src={date} alt="" className="courses__icon" />
-                <p> 5 oy</p>
-              </div>
-            </div>
-            <div className="courses__desc">
-              <h2 className="courses__cardtitle">Motion dizayn</h2>
-              <p className="courses__text">
-                Motion dizayn kursi bilan ijodiy energiya oqimingizni oching:
-                animatsiya olamini kashf eting va ilg‘or animatsiya vositalari
-                va usullaridan foydalangan holda jozibali vizual hikoyalar...
-              </p>
-            </div>
-            <div className="courses__bottom">
-              <p className="courses__price">2 500 000 / oy</p>
-              <div className="courses__link">
-                <p>Batafsil</p>
-                <span className="courses__arrow">→</span>
-              </div>
-            </div>
-          </NavLink>
-          <NavLink
-            draggable="false"
-            to={`/${lang}/courses/4`}
-            className="courses__card"
-          >
-            <div className="courses__top">
-              <img src={course4} loading="lazy" className="courses__img" />
-              <div className="courses__date">
-                <img src={date} alt="" className="courses__icon" />
-                <p> 4 oy</p>
-              </div>
-            </div>
-            <div className="courses__desc">
-              <h2 className="courses__cardtitle">Grafik dizayn</h2>
-              <p className="courses__text">
-                Bizning grafik dizayn kursimiz bilan ijodiy salohiyatingizni
-                oching. Vizual muloqot olamiga sho'ng'ing va nafaqat
-                tasvirlarni, balki samarali xabarlarni yaratuvchi ekspertga
-                aylaning.
-              </p>
-            </div>
-            <div className="courses__bottom">
-              <p className="courses__price">2 000 000 / oy</p>
-              <div className="courses__link">
-                <p>Batafsil</p>
-                <span className="courses__arrow">→</span>
-              </div>
-            </div>
-          </NavLink>
-          <NavLink
-            draggable="false"
-            to={`/${lang}/courses/5`}
-            className="courses__card"
-          >
-            <div className="courses__top">
-              <img src={course5} loading="lazy" className="courses__img" />
-              <div className="courses__date">
-                <img src={date} alt="" className="courses__icon" />
-                <p> 6 oy</p>
-              </div>
-            </div>
-            <div className="courses__desc">
-              <h2 className="courses__cardtitle">Pythonda Back-end...</h2>
-              <p className="courses__text">
-                Python Back-end kursimiz bilan server tomonidagi rivojlanish
-                dunyosiga chuqurroq kirib boring! Ishonchli va keng masshtabga
-                ega veb-ilovalarni yaratish uchun kuchli vositalarni...
-              </p>
-            </div>
-            <div className="courses__bottom">
-              <p className="courses__price">1 500 000 / oy</p>
-              <div className="courses__link">
-                <p>Batafsil</p>
-                <span className="courses__arrow">→</span>
-              </div>
-            </div>
-          </NavLink>
+            </NavLink>
+          ))}
         </Slider>
       </div>
     </div>

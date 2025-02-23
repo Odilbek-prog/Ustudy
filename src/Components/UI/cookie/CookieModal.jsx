@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { useParams } from "react-router-dom";
+import { getText } from "../../../i18n";
 import "./cookie-modal.scss";
 
 const CookieModal = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { lang } = useParams();
 
   useEffect(() => {
     const cookieConsent = Cookies.get("cookie_consent");
@@ -19,7 +22,7 @@ const CookieModal = () => {
   };
 
   const handleDecline = () => {
-    Cookies.set("cookie_consent", "declined", { expires: 1, path: "/" }); // 1 kun saqlanadi (har safar chiqadi)
+    Cookies.set("cookie_consent", "declined", { expires: 1, path: "/" }); // 1 kun saqlanadi
     setIsVisible(false);
   };
 
@@ -28,17 +31,14 @@ const CookieModal = () => {
   return (
     <div className="cookie-modal-overlay">
       <div className="cookie-modal">
-        <h2>Cookie Ruxsati</h2>
-        <p>
-          Saytimiz sizning tajribangizni yaxshilash uchun cookie-fayllardan
-          foydalanadi. Ruxsat berasizmi?
-        </p>
+        <h2>{getText(lang, "cookieTitle")}</h2>
+        <p>{getText(lang, "cookieDescription")}</p>
         <div className="cookie-buttons">
           <button className="accept" onClick={handleAccept}>
-            Ha, Ruxsat
+            {getText(lang, "accept")}
           </button>
           <button className="decline" onClick={handleDecline}>
-            Yo'q
+            {getText(lang, "decline")}
           </button>
         </div>
       </div>

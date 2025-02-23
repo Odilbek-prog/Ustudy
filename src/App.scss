@@ -6,3 +6,156 @@
     rgba(255, 255, 255, 1) 62%
   );
 }
+.coursespage {
+  background: rgb(24, 21, 36);
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  .faq__card {
+    background: rgb(24, 21, 36);
+    border: 1px solid #ffffff40;
+  }
+}
+.coursesintro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/introlines.png);
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  &__wrapper {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+}
+.coursesabout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    gap: 30px;
+  }
+  &__img {
+    width: 600px;
+    border-radius: 15px;
+  }
+  &__title {
+    font-size: 45px;
+  }
+  &__text {
+    font-size: 17px;
+    font-weight: 500;
+  }
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.coursesprice {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__titles {
+    font-size: 20px;
+  }
+  &__title,
+  &__titlegreen {
+    display: inline;
+  }
+  &__titlegreen {
+    color: limegreen;
+  }
+  &__text {
+    width: 400px;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__cards {
+    display: flex;
+    gap: 30px;
+  }
+  &__card1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(55, 52, 71, 0.25);
+    padding: 20px;
+    width: 410px;
+    font-size: 14px;
+    height: 180px;
+  }
+  &__btn {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: limegreen;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__card2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(55, 52, 71, 0.25);
+    padding: 20px;
+    width: 410px;
+    font-size: 17px;
+    font-weight: 600;
+    height: 180px;
+  }
+  &__bottom {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__month {
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 12px 20px;
+    border-radius: 15px;
+  }
+}
+.coursescert {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    gap: 30px;
+  }
+  &__img {
+    border-radius: 15px;
+  }
+  &__desc {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
