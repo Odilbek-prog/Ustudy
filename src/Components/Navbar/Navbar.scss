@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   background-color: rgb(24 21 36);
-  height: 100px;
+  height: 80px;
   transition: all 0.5s ease-in-out;
 
   &__wrapper {
@@ -26,7 +26,7 @@
 
   &__title {
     width: 115px;
-    font-weight: 300;
+    font-weight: 900;
     color: #fff;
   }
 
@@ -82,13 +82,17 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: rgba(24, 21, 36, 0.8);
     backdrop-filter: blur(5px);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transform: translateY(0);
-    padding: 0 20px;
+    // padding: 0 20px;
   }
 }
 
+.navbar__langlink--active {
+  font-weight: 900;
+  color: #ffffff; // Aktiv tilni ko‘rsatish uchun rang
+}
