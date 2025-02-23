@@ -1,0 +1,28 @@
+.location {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__title {
+    font-size: 45px;
+  }
+  &__bottom {
+    display: flex;
+    gap: 30px;
+  }
+  &__right {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__link {
+    color: #000;
+  }
+}

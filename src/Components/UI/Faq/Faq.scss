@@ -1,0 +1,66 @@
+.faq {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 1.5rem 0;
+    background-color: rgba(45, 46, 45, 0.04);
+    border-radius: 0.75rem;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+  }
+  .active {
+    display: none;
+  }
+  &__change {
+    .faq__cardtitle {
+      color: #000;
+    }
+    .faq__btn {
+      svg {
+        transform: scaleY(1);
+      }
+    }
+  }
+  &__title {
+    font-size: 45px;
+  }
+  &__cardtitle {
+    color: green;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  &__card {
+    width: 550px;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__btn {
+    border-radius: 50%;
+    background-color: rgb(0, 174, 0);
+    border: 0;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    color: #fff;
+    svg {
+      transition: all 0.2s ease;
+      transform: scaleY(-1);
+    }
+  }
+}
