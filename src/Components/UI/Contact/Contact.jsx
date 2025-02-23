@@ -5,7 +5,7 @@ import flag from "../../../assets/flag.png";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <div id="contact" className="contact">
       <div className="contact__wrapper">
         <div className="contact__desc">
           <div className="contact__titles">

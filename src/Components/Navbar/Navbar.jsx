@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, useParams, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import menu from "../../assets/menu-list.png";
 import arrow from "../../assets/arrowdown.png";
@@ -8,6 +8,17 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const { lang } = useParams();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="navbar">
       <div className="navbar__wrapper">
@@ -28,7 +39,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="navbar__list">
-            <NavLink className={"navbar__link"} to={`/${lang}#location`}>
+            <NavLink className={"navbar__link"} to={`/${lang}#contact`}>
               {getText(lang, "contact")}
             </NavLink>
           </li>
