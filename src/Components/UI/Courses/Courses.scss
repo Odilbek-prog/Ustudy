@@ -16,10 +16,11 @@
     height: 60px;
   }
   &__card {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    padding: 20px;
-    height: 300px;
+    gap: 25px;
+    padding: 25px;
+    height: 320px;
     border-radius: 15px;
     background-color: black;
     color: #fff;
@@ -54,5 +55,38 @@
     letter-spacing: -0.5px;
     font-weight: 500;
     font-size: 15px;
+  }
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .slick-dots button:before {
+    color: White !important;
+  }
+  &__link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  &__arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 17px;
+    padding: 3px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+  }
+  &__price {
+    background-color: #636363;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
   }
 }

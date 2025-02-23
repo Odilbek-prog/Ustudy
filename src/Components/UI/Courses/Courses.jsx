@@ -21,7 +21,7 @@ const Courses = () => {
     slidesToScroll: 3,
   };
   return (
-    <div className="courses" id="courses">
+    <div className="courses" id="course">
       <div className="courses__wrapper">
         <h1 className="courses__title">Bizning kurslarimiz</h1>
         <Slider className="courses__cards" {...settings}>

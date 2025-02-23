@@ -1,0 +1,30 @@
+.help {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(24 21 36);
+  color: #fff;
+  padding-top: 50px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    width: 610px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__title,
+  &__titlegreen {
+    display: inline;
+    font-size: 40px;
+  }
+  &__titlegreen {
+    color: limegreen;
+  }
+  &__img {
+    width: 650px;
+  }
+}

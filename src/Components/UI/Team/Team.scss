@@ -1,0 +1,46 @@
+.team {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: rgb(24 21 36);
+  color: #fff;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__titles {
+    font-size: 20px;
+  }
+  &__cards {
+    width: 850px;
+    display: flex;
+    gap: 30px !important;
+  }
+  &__card {
+    width: 270px !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__img {
+    width: 270px;
+    height: 320px;
+    object-fit: cover !important;
+  }
+  &__work {
+    display: flex;
+    gap: 10px;
+  }
+  &__carddesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .slick-dots button:before {
+    color: White !important;
+  }
+}

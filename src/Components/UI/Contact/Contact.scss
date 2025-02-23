@@ -1,0 +1,85 @@
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(24 21 36);
+  color: #fff;
+  padding-top: 100px;
+  &__wrapper {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__titles {
+    width: 600px;
+    font-size: 20px;
+  }
+  &__title,
+  &__titlegreen {
+    display: inline;
+  }
+  &__titlegreen {
+    color: limegreen;
+  }
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__right {
+    width: 600px;
+    background-color: rgb(39, 35, 53);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #757575;
+    border-radius: 5px;
+    background-color: rgb(55, 49, 77);
+    font-size: 16px;
+    outline: 0;
+    color: #fff;
+  }
+  &__inp {
+    width: 100%;
+    background-color: rgb(55, 49, 77);
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    color: #fff;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+  &__btn {
+    width: 400px;
+    border: none;
+    height: 40px;
+    border-radius: 15px;
+    background-color: limegreen;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

@@ -7,8 +7,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
 import Layout from "./Components/Layout";
+import "./App.scss";
 
 const App = () => {
   const navigate = useNavigate();
@@ -28,7 +28,6 @@ const App = () => {
     <Routes>
       <Route path="/:lang" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

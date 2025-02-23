@@ -5,7 +5,7 @@ import student from "../../../assets/student.png";
 import comp from "../../../assets/comp.png";
 import heart from "../../../assets/heart.png";
 import file from "../../../assets/file.png";
-import briefcase from "../../../assets/briefcase.png";
+import briefcase from "../../../assets/briefcase3.png";
 
 const Whywe = () => {
   return (
