@@ -21,6 +21,7 @@ const Location = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+
           <div className="location__right">
             <p className="location__text">
               {getText(lang, "location_address_label")}

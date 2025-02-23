@@ -1,6 +1,3 @@
-import React, { useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import { getText } from "../i18n";
 import Intro from "../Components/UI/Intro/Intro";
 import Whywe from "../Components/UI/Whywe/Whywe";
 import Courses from "../Components/UI/Courses/Courses";
@@ -13,33 +10,36 @@ import Value from "../Components/UI/Value/Value";
 import Work from "../Components/UI/Work/Work";
 import Faq from "../Components/UI/Faq/Faq";
 import Location from "../Components/UI/Location/Location";
+import React from "react";
+
+const MemoIntro = React.memo(Intro);
+const MemoWhywe = React.memo(Whywe);
+const MemoCourses = React.memo(Courses);
+const MemoContact = React.memo(Contact);
+const MemoTeam = React.memo(Team);
+const MemoDirector = React.memo(Director);
+const MemoVacancies = React.memo(Vacancies);
+const MemoHelp = React.memo(Help);
+const MemoValue = React.memo(Value);
+const MemoWork = React.memo(Work);
+const MemoFaq = React.memo(Faq);
+const MemoLocation = React.memo(Location);
 
 const Home = () => {
-  const { lang } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (lang) {
-      localStorage.setItem("lang", lang);
-    } else {
-      navigate("/uz");
-    }
-  }, [lang, navigate]);
-
   return (
     <div className="home">
-      <Intro />
-      <Whywe />
-      <Courses />
-      <Contact />
-      <Team />
-      <Director />
-      <Vacancies />
-      <Help />
-      <Value />
-      <Work />
-      <Faq />
-      <Location />
+      <MemoIntro />
+      <MemoWhywe />
+      <MemoCourses />
+      <MemoContact />
+      <MemoTeam />
+      <MemoDirector />
+      <MemoVacancies />
+      <MemoHelp />
+      <MemoValue />
+      <MemoWork />
+      <MemoFaq />
+      <MemoLocation />
     </div>
   );
 };

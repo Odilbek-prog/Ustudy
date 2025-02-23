@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Intro.scss";
 import { NavLink } from "react-router-dom";
 import { getText } from "../../../i18n";

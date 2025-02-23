@@ -28,7 +28,6 @@ const Navbar = () => {
     };
   }, []);
 
-  //scroll to section when link clicked
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
@@ -38,7 +37,6 @@ const Navbar = () => {
     }
   }, [location]);
 
-  // change language
   const changeLanguage = (newLang) => {
     if (newLang !== lang) {
       setIsLoading(true);
@@ -80,7 +78,9 @@ const Navbar = () => {
             <ul className="navbar__lang">
               <li className="navbar__list">
                 <button
-                  className="navbar__langlink"
+                  className={`navbar__langlink ${
+                    lang === "uzb" ? "navbar__langlink--active" : ""
+                  }`}
                   onClick={() => changeLanguage("uzb")}
                 >
                   UZB
@@ -88,7 +88,9 @@ const Navbar = () => {
               </li>
               <li className="navbar__list">
                 <button
-                  className="navbar__langlink"
+                  className={`navbar__langlink ${
+                    lang === "china" ? "navbar__langlink--active" : ""
+                  }`}
                   onClick={() => changeLanguage("china")}
                 >
                   中国人
@@ -96,7 +98,9 @@ const Navbar = () => {
               </li>
               <li className="navbar__list">
                 <button
-                  className="navbar__langlink"
+                  className={`navbar__langlink ${
+                    lang === "turk" ? "navbar__langlink--active" : ""
+                  }`}
                   onClick={() => changeLanguage("turk")}
                 >
                   TÜRK
@@ -104,7 +108,9 @@ const Navbar = () => {
               </li>
               <li className="navbar__list">
                 <button
-                  className="navbar__langlink"
+                  className={`navbar__langlink ${
+                    lang === "eng" ? "navbar__langlink--active" : ""
+                  }`}
                   onClick={() => changeLanguage("eng")}
                 >
                   ENG

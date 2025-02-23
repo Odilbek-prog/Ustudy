@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useCallback, memo } from "react";
 import "./Courses.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -119,4 +119,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default memo(Courses);
