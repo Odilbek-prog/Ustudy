@@ -1,9 +1,14 @@
-import React from "react";
+import React, { memo, useCallback } from "react";
 import "./Contact.scss";
 import { NavLink } from "react-router-dom";
 import flag from "../../../assets/flag.png";
 
 const Contact = () => {
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+    console.log("Form submitted");
+  }, []);
+
   return (
     <div className="contact">
       <div className="contact__wrapper">
@@ -12,7 +17,7 @@ const Contact = () => {
             <h1 className="contact__title">
               Biz sizga tanlashda yordam beramiz
             </h1>
-            <h1 className="contact__titlegreen"> tegishli kurs!</h1>
+            <h1 className="contact__titlegreen">tegishli kurs!</h1>
           </div>
           <p className="contact__text">
             Biz sizga to'g'ri kursni tanlashda yordam beramiz!
@@ -20,7 +25,7 @@ const Contact = () => {
         </div>
         <div className="contact__right">
           <h3 className="contact__righttitle">Sizning kontaktingiz:</h3>
-          <form className="contact__form">
+          <form className="contact__form" onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Ismingiz..."
@@ -60,4 +65,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

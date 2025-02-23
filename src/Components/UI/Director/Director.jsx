@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Director.scss";
 import uzin from "../../../assets/uzinfocom.png";
 import icon1 from "../../../assets/director1.png";
@@ -72,4 +72,4 @@ const Director = () => {
   );
 };
 
-export default Director;
+export default memo(Director);

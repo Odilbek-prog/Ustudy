@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense, useMemo } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,41 +6,49 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
-import Home from "./Pages/Home";
-import Layout from "./Components/Layout";
-import CookieModal from "./Components/UI/cookie/CookieModal";
+import Loader from "./Components/UI/loader/Loader";
 import "./App.scss";
 
-const App = () => {
-  // Cookie state
+// Lazy Loading
+const Home = lazy(() => import("./Pages/Home"));
+const Layout = lazy(() => import("./Components/Layout"));
+const CookieModal = lazy(() => import("./Components/UI/cookie/CookieModal"));
 
+const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    const savedLang = localStorage.getItem("lang") || "eng";
-    const pathParts = location.pathname.split("/").filter(Boolean);
-    const currentLang = pathParts[0];
+  const savedLang = useMemo(() => localStorage.getItem("lang") || "eng", []);
+  const pathParts = useMemo(
+    () => location.pathname.split("/").filter(Boolean),
+    [location.pathname]
+  );
+  const currentLang = pathParts[0];
 
+  useEffect(() => {
     if (!["uzb", "turk", "eng", "china"].includes(currentLang)) {
       navigate(`/${savedLang}${location.pathname}`, { replace: true });
     }
-  }, [navigate, location]);
+  }, [currentLang, savedLang, navigate, location.pathname]);
 
   return (
-    <Routes>
-      <Route path="/:lang" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="*" element={<Home />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/:lang" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
 
 const AppWrapper = () => (
   <Router>
     <App />
-    <CookieModal />
+    <Suspense fallback={<Loader />}>
+      <CookieModal />
+    </Suspense>
   </Router>
 );
 

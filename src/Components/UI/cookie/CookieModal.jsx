@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { LuCookie } from "react-icons/lu";
 import "./cookie-modal.scss";
 
 const CookieModal = () => {
@@ -14,20 +15,21 @@ const CookieModal = () => {
   }, []);
 
   const handleAccept = () => {
-    Cookies.set("cookie_consent", "accepted", { expires: 7, path: "/" }); // 1 hafta saqlanadi
+    Cookies.set("cookie_consent", "accepted", { expires: 7, path: "/" });
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    Cookies.set("cookie_consent", "declined", { expires: 1, path: "/" }); // 1 kun saqlanadi (har safar chiqadi)
+    Cookies.set("cookie_consent", "declined", { expires: 1, path: "/" });
     setIsVisible(false);
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="cookie-modal-overlay">
-      <div className="cookie-modal">
+    <div className="cookie-modal">
+      <div className="cookie-content">
+        <LuCookie className="cookie-icon" size={40} />
         <h2>Cookie Ruxsati</h2>
         <p>
           Saytimiz sizning tajribangizni yaxshilash uchun cookie-fayllardan

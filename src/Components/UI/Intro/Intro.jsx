@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import "./Intro.scss";
 import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
@@ -6,20 +6,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Intro = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-  };
+  const settings = useMemo(
+    () => ({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      swipeToSlide: true,
+    }),
+    []
+  );
+
   return (
     <div className="intro">
       <div className="intro__wrapper">
         <div className="intro__desc">
           <div className="intro__titles">
-            <h1 className="intro__title">IT MINDED"{">"}MAKE PEOPLE </h1>
+            <h1 className="intro__title">IT MINDED{">"}MAKE PEOPLE </h1>
             <h1 className="intro__titlegreen">IT MINDED</h1>
           </div>
           <p className="intro__text">
@@ -52,7 +56,7 @@ const Intro = () => {
             <p className="intro__date">2 oy</p>
           </NavLink>
           <NavLink draggable="false" className="intro__card intro__card3">
-            <h1>Motion dizyn</h1>
+            <h1>Motion dizayn</h1>
             <p className="intro__date">5 oy</p>
           </NavLink>
         </Slider>
@@ -61,4 +65,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default memo(Intro);
