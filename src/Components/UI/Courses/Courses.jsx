@@ -100,7 +100,7 @@ const Courses = () => {
             <NavLink
               key={course.id}
               draggable="false"
-              to={`/${lang}/courses/${course.id}`}
+              to={`/${lang}/course${course.id}`}
               className="courses__card"
             >
               <div className="courses__top">
