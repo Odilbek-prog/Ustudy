@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   margin-top: 80px;
+
   &__wrapper {
     width: 1300px;
     display: flex;
@@ -14,33 +15,24 @@
     background-color: rgba(45, 46, 45, 0.04);
     border-radius: 0.75rem;
   }
+
   &__top {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     align-items: center;
   }
-  .active {
-    display: none;
-  }
-  &__change {
-    .faq__cardtitle {
-      color: #000;
-    }
-    .faq__btn {
-      svg {
-        transform: scaleY(1);
-      }
-    }
-  }
+
   &__title {
     font-size: 45px;
   }
+
   &__cardtitle {
     color: green;
     font-weight: 500;
     transition: all 0.2s ease;
   }
+
   &__card {
     width: 550px;
     padding: 1.5rem;
@@ -49,7 +41,33 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    transition: all 0.3s ease;
   }
+
+  &__text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  &__change {
+    .faq__cardtitle {
+      color: #000;
+    }
+
+    .faq__btn {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .faq__text {
+      max-height: 200px; /* Matn uzunligiga qarab o'zgartirish mumkin */
+      opacity: 1;
+    }
+  }
+
   &__btn {
     border-radius: 50%;
     background-color: rgb(0, 174, 0);
@@ -58,9 +76,50 @@
     height: 40px;
     padding: 5px;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     svg {
       transition: all 0.2s ease;
-      transform: scaleY(-1);
+      transform: rotate(0deg);
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .faq__wrapper {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .faq__card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq__title {
+    font-size: 35px;
+  }
+
+  .faq__card {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq__title {
+    font-size: 28px;
+  }
+
+  .faq__card {
+    padding: 0.8rem;
+  }
+
+  .faq__btn {
+    width: 35px;
+    height: 35px;
   }
 }

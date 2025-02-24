@@ -18,7 +18,7 @@ const Work = () => {
   return (
     <div className="work">
       <div className="work__wrapper">
-        <img src={mission} loading="lazy" alt="" className="work__img" />
+        <img src={mission} loading="lazy" alt="Mission" className="work__img" />
         <div className="work__right">
           <h1 className="work__title">{getText(lang, "ourMission")}</h1>
           <p className="work__text">{getText(lang, "missionText")}</p>

@@ -99,6 +99,9 @@
 }
 @media only screen and (max-width: 1335px) {
   .courses {
+    &__wrapper {
+      width: 92%;
+    }
     &__card {
       width: 600px !important;
     }
@@ -106,6 +109,9 @@
 }
 @media only screen and (max-width: 1295px) {
   .courses {
+    &__wrapper {
+      width: 92%;
+    }
     &__card {
       width: 550px !important;
     }
@@ -113,6 +119,9 @@
 }
 @media only screen and (max-width: 1190px) {
   .courses {
+    &__wrapper {
+      width: 92%;
+    }
     &__card {
       width: 500px !important;
     }
@@ -120,6 +129,9 @@
 }
 @media only screen and (max-width: 1100px) {
   .courses {
+    &__wrapper {
+      width: 92%;
+    }
     &__card {
       width: 450px !important;
     }
@@ -127,6 +139,9 @@
 }
 @media only screen and (max-width: 1000px) {
   .courses {
+    &__wrapper {
+      width: 92%;
+    }
     &__card {
       width: 400px !important;
     }
@@ -134,6 +149,9 @@
 }
 @media only screen and (max-width: 870px) {
   .courses {
+    &__wrapper {
+      width: 92%;
+    }
     &__card {
       width: 360px !important;
     }
@@ -141,6 +159,10 @@
 }
 @media only screen and (max-width: 768px) {
   .courses {
+    &__wrapper {
+      width: 92% !important;
+      margin:  50px 0;
+    }
     &__card {
       width: 100% !important;
     }
