@@ -1,38 +1,69 @@
+// SCSS file
+// Work.scss
 .work {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  padding: 20px;
+
   &__wrapper {
-    width: 1300px;
+    width: 100%;
+    max-width: 1300px;
     display: flex;
-    gap: 120px;
+    gap: 50px;
     align-items: center;
+    flex-wrap: wrap;
   }
+
   &__img {
     border-radius: 15px;
+    max-width: 100%;
+    height: auto;
   }
+
   &__title {
-    font-size: 45px;
+    font-size: 2.5rem;
   }
+
   &__right {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    max-width: 600px;
   }
+
   &__bottom {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
+
   &__values {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
+
   &__value {
     display: flex;
     gap: 10px;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    &__wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__text{
+      text-align: center;
+      text-transform: none;
+    }
+
+    &__img {
+      width: 100%;
+    }
   }
 }

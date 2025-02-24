@@ -21,28 +21,24 @@ const Help = () => {
           </div>
           <p className="help__text">{getText(lang, "help_desc")}</p>
           <h3 className="help__text">{getText(lang, "help_contact")}</h3>
-          <form className="contact__form">
+          <form className="help__form">
             <input
               type="text"
               placeholder={getText(lang, "help_name_placeholder")}
-              className="contact__input"
+              className="help__input"
             />
-            <div
-              className="contact__input"
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <img src={flag} alt="" />
-              <span style={{ marginLeft: "5px" }}>+998</span>
+            <div className="help__phone">
+              <img src={flag} alt="flag" />
+              <span>+998</span>
               <input
-                type="number"
+                type="text"
                 placeholder={getText(lang, "help_phone_placeholder")}
-                maxLength={9}
-                className="contact__inp"
-                style={{ marginLeft: "5px" }}
+                pattern="\d{9}"
+                className="help__phone-input"
               />
             </div>
-            <div className="contact__bottom">
-              <button type="submit" className="contact__btn">
+            <div className="help__bottom">
+              <button type="submit" className="help__btn">
                 {getText(lang, "help_submit")}
               </button>
               <p>
@@ -55,7 +51,7 @@ const Help = () => {
             </div>
           </form>
         </div>
-        <img src={help} loading="lazy" alt="" className="help__img" />
+        <img src={help} loading="lazy" alt="help" className="help__img" />
       </div>
     </div>
   );

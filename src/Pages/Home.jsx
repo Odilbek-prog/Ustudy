@@ -35,11 +35,11 @@ const Home = () => {
       <MemoTeam />
       <MemoDirector />
       <MemoVacancies />
-      {/* <MemoHelp />
+      <MemoHelp />
       <MemoValue />
       <MemoWork />
       <MemoFaq />
-      <MemoLocation /> */}
+      <MemoLocation />
     </div>
   );
 };

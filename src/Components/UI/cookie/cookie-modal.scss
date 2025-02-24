@@ -8,12 +8,14 @@
   border-radius: 12px;
   text-align: center;
   width: 350px;
+  max-width: 90%;
   box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   gap: 15px;
   z-index: 1000;
   animation: slideUp 0.5s ease-in-out;
+  will-change: transform, opacity;
 
   .cookie-content {
     display: flex;
@@ -24,17 +26,18 @@
 
   .cookie-icon {
     color: #f4c542;
+    font-size: 24px;
   }
 
   h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   p {
     font-size: 14px;
     color: #bbb;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   .cookie-buttons {
@@ -43,13 +46,17 @@
     width: 100%;
 
     button {
-      padding: 10px 20px;
+      padding: 10px 18px;
       border: none;
       border-radius: 6px;
       font-size: 14px;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
       box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+
+      &:focus {
+        outline: 2px solid white;
+      }
     }
 
     .accept {
@@ -69,6 +76,40 @@
       &:hover {
         background: #a93226;
         transform: scale(1.05);
+      }
+    }
+  }
+
+  // RESPONSIVE DESIGN
+  @media (max-width: 768px) {
+    // left: 10px;
+    // bottom: 10px;
+    padding: 15px;
+    width: 300px;
+    flex-direction: column;
+    gap: 10px;
+
+    .cookie-buttons {
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    // left: 5%;
+    // bottom: 5%;
+    padding: 12px;
+    font-size: 12px;
+
+    .cookie-buttons {
+      button {
+        font-size: 12px;
+        padding: 8px 12px;
       }
     }
   }
