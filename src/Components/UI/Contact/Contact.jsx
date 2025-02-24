@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="contact__wrapper">
         <div className="contact__desc">
           <div className="contact__titles">
-            <h1 className="contact__title">{getText(lang, "helpChoose")}</h1>
+            <h1 className="contact__title">{getText(lang, "helpChoose")} </h1>
             <h1 className="contact__titlegreen">
               {getText(lang, "relevantCourse")}
             </h1>

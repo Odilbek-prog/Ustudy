@@ -83,3 +83,30 @@
     -moz-appearance: textfield;
   }
 }
+@media only screen and (max-width: 1310px) {
+  .contact {
+    &__wrapper {
+      width: 95%;
+    }
+    &__titles {
+      width: 60% !important;
+    }
+    &__right {
+      width: 50% !important;
+    }
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .contact {
+    &__wrapper {
+      flex-direction: column;
+      gap: 30px;
+    }
+    &__titles {
+      width: 100% !important;
+    }
+    &__right {
+      width: 100% !important;
+    }
+  }
+}

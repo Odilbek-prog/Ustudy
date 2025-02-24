@@ -36,3 +36,22 @@
     }
   }
 }
+@media only screen and (max-width: 1310px) {
+  .whywe {
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .whywe {
+    &__card {
+      width: 48%;
+    }
+  }
+}
+@media only screen and (max-width: 520px) {
+  .whywe {
+    &__card {
+      width: 100%;
+    }
+  }
+}

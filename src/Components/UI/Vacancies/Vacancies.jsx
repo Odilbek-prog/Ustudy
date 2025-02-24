@@ -13,10 +13,38 @@ const Vacancies = () => {
 
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
+    centerMode: true,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1215,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1030,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 636,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 915,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
@@ -30,7 +58,11 @@ const Vacancies = () => {
             {getText(lang, "vacanciesCount")} – 4
           </p>
         </div>
-        <Slider className="vacancies__cards" {...settings}>
+        <Slider
+          className="vacancies__cards"
+          {...settings}
+          key={JSON.stringify(settings)}
+        >
           {[
             { title: "designer", salary: "6 515 151" },
             { title: "seniorDeveloper", salary: "1 200 000" },

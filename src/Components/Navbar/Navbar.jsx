@@ -3,6 +3,8 @@ import { NavLink, useParams, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import menu from "../../assets/menu-list.png";
 import arrow from "../../assets/arrowdown.png";
+import burger from "../../assets/burger.png";
+import close from "../../assets/close.png";
 import { getText } from "../../i18n";
 import "./Navbar.scss";
 import Loader from "../UI/loader/Loader";
@@ -13,8 +15,12 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [show, setShow] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleShow = () => {
     setShow(!show);
+  };
+  const handleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
   // menu dropdown
   useEffect(() => {
@@ -57,121 +63,138 @@ const Navbar = () => {
             <hr className="navbar__hr" />
             <h3 className="navbar__title">USTUDY BY UZINFOCOM</h3>
           </NavLink>
-          <ul className="navbar__menu">
-            <li className="navbar__list">
-              <NavLink className={"navbar__link"} to={`/${lang}#course`}>
-                {getText(lang, "course")}
-              </NavLink>
-            </li>
-            <li className="navbar__list">
-              <NavLink className={"navbar__link"} to={`/${lang}#help`}>
-                {getText(lang, "help")}
-              </NavLink>
-            </li>
-            <li className="navbar__list">
-              <NavLink className={"navbar__link"} to={`/${lang}#address`}>
-                {getText(lang, "contact")}
-              </NavLink>
-            </li>
-          </ul>
-          <div className="navbar__langcourses">
-            <ul className="navbar__lang">
+          <div className={`navbar__links ${menuOpen ? "show" : ""}`}>
+            <ul className="navbar__menu">
               <li className="navbar__list">
-                <button
-                  className={`navbar__langlink ${
-                    lang === "uzb" ? "navbar__langlink--active" : ""
-                  }`}
-                  onClick={() => changeLanguage("uzb")}
-                >
-                  UZB
-                </button>
+                <NavLink className={"navbar__link"} to={`/${lang}#course`}>
+                  {getText(lang, "course")}
+                </NavLink>
               </li>
               <li className="navbar__list">
-                <button
-                  className={`navbar__langlink ${
-                    lang === "china" ? "navbar__langlink--active" : ""
-                  }`}
-                  onClick={() => changeLanguage("china")}
-                >
-                  中国人
-                </button>
+                <NavLink className={"navbar__link"} to={`/${lang}#help`}>
+                  {getText(lang, "help")}
+                </NavLink>
               </li>
               <li className="navbar__list">
-                <button
-                  className={`navbar__langlink ${
-                    lang === "turk" ? "navbar__langlink--active" : ""
-                  }`}
-                  onClick={() => changeLanguage("turk")}
-                >
-                  TÜRK
-                </button>
-              </li>
-              <li className="navbar__list">
-                <button
-                  className={`navbar__langlink ${
-                    lang === "eng" ? "navbar__langlink--active" : ""
-                  }`}
-                  onClick={() => changeLanguage("eng")}
-                >
-                  ENG
-                </button>
+                <NavLink className={"navbar__link"} to={`/${lang}#address`}>
+                  {getText(lang, "contact")}
+                </NavLink>
               </li>
             </ul>
-            <button className="navbar__courses" onClick={handleShow}>
-              <img src={menu} loading="lazy" alt="" className="navbar__icon" />
-              {getText(lang, "allcourse")}
-              <img src={arrow} loading="lazy" alt="" className="navbar__icon" />
-            </button>
-            {show ? (
-              <ul className="navbar__dropdown">
-                <li className="navbar__dropdownlist">
-                  <NavLink
-                    className="navbar__dropdownlink"
-                    to={`/${lang}/course1`}
-                    onClick={handleShow}
+            <div className="navbar__langcourses">
+              <ul className="navbar__lang">
+                <li className="navbar__list">
+                  <button
+                    className={`navbar__langlink ${
+                      lang === "uzb" ? "navbar__langlink--active" : ""
+                    }`}
+                    onClick={() => changeLanguage("uzb")}
                   >
-                    {getText(lang, "course1.name")}
-                  </NavLink>
+                    UZB
+                  </button>
                 </li>
-                <li className="navbar__dropdownlist">
-                  <NavLink
-                    className="navbar__dropdownlink"
-                    to={`/${lang}/course2`}
-                    onClick={handleShow}
+                <li className="navbar__list">
+                  <button
+                    className={`navbar__langlink ${
+                      lang === "china" ? "navbar__langlink--active" : ""
+                    }`}
+                    onClick={() => changeLanguage("china")}
                   >
-                    {getText(lang, "course2.name")}
-                  </NavLink>
+                    中国人
+                  </button>
                 </li>
-                <li className="navbar__dropdownlist">
-                  <NavLink
-                    className="navbar__dropdownlink"
-                    to={`/${lang}/course3`}
-                    onClick={handleShow}
+                <li className="navbar__list">
+                  <button
+                    className={`navbar__langlink ${
+                      lang === "turk" ? "navbar__langlink--active" : ""
+                    }`}
+                    onClick={() => changeLanguage("turk")}
                   >
-                    {getText(lang, "course3.name")}
-                  </NavLink>
+                    TÜRK
+                  </button>
                 </li>
-                <li className="navbar__dropdownlist">
-                  <NavLink
-                    className="navbar__dropdownlink"
-                    to={`/${lang}/course4`}
-                    onClick={handleShow}
+                <li className="navbar__list">
+                  <button
+                    className={`navbar__langlink ${
+                      lang === "eng" ? "navbar__langlink--active" : ""
+                    }`}
+                    onClick={() => changeLanguage("eng")}
                   >
-                    {getText(lang, "course4.name")}
-                  </NavLink>
-                </li>
-                <li className="navbar__dropdownlist">
-                  <NavLink
-                    className="navbar__dropdownlink"
-                    to={`/${lang}/course5`}
-                    onClick={handleShow}
-                  >
-                    {getText(lang, "course5.name")}
-                  </NavLink>
+                    ENG
+                  </button>
                 </li>
               </ul>
-            ) : null}
+              <button className="navbar__courses" onClick={handleShow}>
+                <img
+                  src={menu}
+                  loading="lazy"
+                  alt=""
+                  className="navbar__icon"
+                />
+                {getText(lang, "allcourse")}
+                <img
+                  src={arrow}
+                  loading="lazy"
+                  alt=""
+                  className="navbar__icon"
+                />
+              </button>
+              {show ? (
+                <ul className="navbar__dropdown">
+                  <li className="navbar__dropdownlist">
+                    <NavLink
+                      className="navbar__dropdownlink"
+                      to={`/${lang}/course1`}
+                      onClick={handleShow}
+                    >
+                      {getText(lang, "course1.name")}
+                    </NavLink>
+                  </li>
+                  <li className="navbar__dropdownlist">
+                    <NavLink
+                      className="navbar__dropdownlink"
+                      to={`/${lang}/course2`}
+                      onClick={handleShow}
+                    >
+                      {getText(lang, "course2.name")}
+                    </NavLink>
+                  </li>
+                  <li className="navbar__dropdownlist">
+                    <NavLink
+                      className="navbar__dropdownlink"
+                      to={`/${lang}/course3`}
+                      onClick={handleShow}
+                    >
+                      {getText(lang, "course3.name")}
+                    </NavLink>
+                  </li>
+                  <li className="navbar__dropdownlist">
+                    <NavLink
+                      className="navbar__dropdownlink"
+                      to={`/${lang}/course4`}
+                      onClick={handleShow}
+                    >
+                      {getText(lang, "course4.name")}
+                    </NavLink>
+                  </li>
+                  <li className="navbar__dropdownlist">
+                    <NavLink
+                      className="navbar__dropdownlink"
+                      to={`/${lang}/course5`}
+                      onClick={handleShow}
+                    >
+                      {getText(lang, "course5.name")}
+                    </NavLink>
+                  </li>
+                </ul>
+              ) : null}
+            </div>
           </div>
+          {menuOpen ? (
+            <img onClick={handleMenu} src={close} className="navbar__burger" />
+          ) : (
+            <img onClick={handleMenu} src={burger} className="navbar__burger" />
+          )}
         </div>
       </div>
     </>

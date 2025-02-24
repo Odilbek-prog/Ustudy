@@ -90,3 +90,59 @@
     font-weight: 600;
   }
 }
+@media only screen and (max-width: 1350px) {
+  .courses {
+    &__wrapper {
+      width: 92%;
+    }
+  }
+}
+@media only screen and (max-width: 1335px) {
+  .courses {
+    &__card {
+      width: 600px !important;
+    }
+  }
+}
+@media only screen and (max-width: 1295px) {
+  .courses {
+    &__card {
+      width: 550px !important;
+    }
+  }
+}
+@media only screen and (max-width: 1190px) {
+  .courses {
+    &__card {
+      width: 500px !important;
+    }
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .courses {
+    &__card {
+      width: 450px !important;
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .courses {
+    &__card {
+      width: 400px !important;
+    }
+  }
+}
+@media only screen and (max-width: 870px) {
+  .courses {
+    &__card {
+      width: 360px !important;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .courses {
+    &__card {
+      width: 100% !important;
+    }
+  }
+}

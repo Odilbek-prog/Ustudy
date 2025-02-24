@@ -15,6 +15,9 @@
   &__titles {
     font-size: 20px;
   }
+  &__titlegreen {
+    color: limegreen;
+  }
   &__cards {
     width: 850px;
     display: flex;
@@ -30,6 +33,7 @@
     width: 270px;
     height: 320px;
     object-fit: cover !important;
+    object-position: top;
   }
   &__work {
     display: flex;
@@ -42,5 +46,70 @@
   }
   .slick-dots button:before {
     color: White !important;
+  }
+}
+@media only screen and (max-width: 1360px) {
+  .team {
+    &__wrapper {
+      width: 95%;
+    }
+  }
+}
+@media only screen and (max-width: 1285px) {
+  .team {
+    &__card {
+      width: 100% !important;
+    }
+    &__img {
+      width: 95%;
+    }
+  }
+}
+@media only screen and (max-width: 1134px) {
+  .team {
+    &__wrapper {
+      gap: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .team {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__cards {
+      width: 100% !important;
+    }
+  }
+}
+@media only screen and (max-width: 1121px) {
+  .team {
+    &__cards {
+      width: 800px;
+    }
+    &__card {
+      width: 90% !important;
+    }
+  }
+}
+@media only screen and (max-width: 1076px) {
+  .team {
+    &__cards {
+      width: 750px;
+    }
+  }
+}
+@media only screen and (max-width: 635px) {
+  .team {
+    &__cards {
+      width: 90% !important;
+    }
+    &__card {
+      width: 100% !important;
+    }
+    &__img {
+      width: 100% !important;
+      height: 500px;
+    }
   }
 }

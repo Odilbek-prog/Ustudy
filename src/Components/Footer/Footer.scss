@@ -58,3 +58,23 @@
     color: #fff;
   }
 }
+@media only screen and (max-width: 1315px) {
+  .footer {
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .footer {
+    height: auto;
+    &__wrapper {
+      flex-direction: column;
+      gap: 30px;
+    }
+    &__logo {
+      text-align: center;
+    }
+    &__menu {
+      align-items: center;
+    }
+  }
+}

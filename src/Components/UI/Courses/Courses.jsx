@@ -23,12 +23,18 @@ const Courses = () => {
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2, slidesToScroll: 2 },
+        breakpoint: 1325,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
       },
       {
-        breakpoint: 600,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
       },
     ],
   };
@@ -80,7 +86,11 @@ const Courses = () => {
     <div className="courses" id="course">
       <div className="courses__wrapper">
         <h1 className="courses__title">{getText(lang, "ourCourses")}</h1>
-        <Slider className="courses__cards" {...settings}>
+        <Slider
+          className="courses__cards"
+          {...settings}
+          key={JSON.stringify(settings)}
+        >
           {courses.map((course) => (
             <NavLink
               key={course.id}
