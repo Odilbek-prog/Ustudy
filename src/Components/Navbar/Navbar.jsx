@@ -21,6 +21,7 @@ const Navbar = () => {
   };
   const handleMenu = () => {
     setMenuOpen(!menuOpen);
+    document.getElementById("body").classList.toggle("overflow");
   };
   // menu dropdown
   useEffect(() => {
