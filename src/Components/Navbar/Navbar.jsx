@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams, useLocation } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/UStudy-logo.svg";
 import menu from "../../assets/menu-list.png";
 import arrow from "../../assets/arrowdown.png";
 import burger from "../../assets/burger.png";
