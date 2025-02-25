@@ -17,6 +17,14 @@ const Intro = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1030,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
