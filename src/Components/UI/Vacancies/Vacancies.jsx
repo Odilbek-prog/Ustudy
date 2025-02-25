@@ -23,12 +23,14 @@ const Vacancies = () => {
         breakpoint: 1215,
         settings: {
           slidesToShow: 2,
+          arrows: false,
         },
       },
       {
         breakpoint: 1030,
         settings: {
           slidesToShow: 3,
+          arrows: false,
         },
       },
       {
@@ -36,12 +38,14 @@ const Vacancies = () => {
         settings: {
           slidesToShow: 1,
           centerMode: false,
+          arrows: false,
         },
       },
       {
         breakpoint: 915,
         settings: {
           slidesToShow: 2,
+          arrows: false,
         },
       },
     ],
